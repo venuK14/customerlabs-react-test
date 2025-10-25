@@ -1,16 +1,77 @@
-# React + Vite
+# CustomerLabs React Test - Segment Builder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React app for creating customer segments.
 
-Currently, two official plugins are available:
+## 🚀 Quick Start
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 1. Install
+```bash
+npm install
+```
 
-## React Compiler
+### 2. Run
+```bash
+npm run dev
+```
+Open http://localhost:5173
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🎯 How to Use
 
-## Expanding the ESLint configuration
+1. **Click "Save segment"** button
+2. **Enter segment name** (required)
+3. **Add schemas:**
+   - Select from dropdown
+   - Click "+ Add new schema"
+   - See schemas in blue box
+4. **Click "Save the Segment"**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📋 Available Schemas
+- First Name, Last Name, Gender, Age
+- Account Name, City, State
+
+## 🔧 Commands
+
+```bash
+npm run dev      # Start development
+npm run build    # Build for production
+npm run preview  # Preview build
+```
+
+## 📁 Files
+- `src/App.jsx` - Main app
+- `src/App.css` - Styles
+- `README.md` - This file
+
+## 🎨 Features
+- ✅ Modal popup for segment creation
+- ✅ Dynamic schema selection
+- ✅ Form validation
+- ✅ Success/error notifications
+- ✅ API integration with webhook
+
+## 🔗 API
+Sends data to: `https://webhook.site/02cb5447-63d0-47be-a100-52577b486ca8`
+
+**Data Format:**
+```json
+{
+  "segment_name": "my_segment",
+  "schema": [
+    {"first_name": "First Name"},
+    {"last_name": "Last Name"}
+  ]
+}
+```
+
+## 🐛 Issues?
+```bash
+# If port is busy
+lsof -ti:5173 | xargs kill -9
+
+# If dependencies fail
+rm -rf node_modules package-lock.json
+npm install
+```
+
+---
+**Built for CustomerLabs React Test** 🎯
